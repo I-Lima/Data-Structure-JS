@@ -1,3 +1,5 @@
+[Leia esta página em português](https://github.com/I-Lima/Data-Structure-JS/edit/main/Arrays/README-pt.md)
+
 # Arrays
 
 **Summary**
