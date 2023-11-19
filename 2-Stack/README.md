@@ -1,4 +1,4 @@
-Segue a tradução para inglês do arquivo:
+[Leia esta página em português](./README-pt.md)
 
 # Stacks
 
