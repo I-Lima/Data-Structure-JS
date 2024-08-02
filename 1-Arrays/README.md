@@ -1,53 +1,55 @@
+[Read this page in English](./README-en.md)
+
 # Arrays
 
-**Summary**
+**Sumário**
 
 - [Arrays](#arrays)
-  - [Introduction](#introduction)
-  - [Why Should We Use Arrays?](#why-should-we-use-arrays)
-  - [Creating and Initializing Arrays](#creating-and-initializing-arrays)
-  - [Adding Elements](#adding-elements)
-    - [Appending at the End - push](#appending-at-the-end---push)
-  - [Adding at the First Position - unshift](#adding-at-the-first-position---unshift)
-  - [Removing Elements](#removing-elements)
-    - [Removing an Element from the End - pop](#removing-an-element-from-the-end---pop)
-    - [Removing an Element from the First Position - shift](#removing-an-element-from-the-first-position---shift)
-  - [Adding and Removing from a Specific Position - splice](#adding-and-removing-from-a-specific-position---splice)
-  - [Iterating through two-dimensional Arrays](#iterating-through-two-dimensional-arrays)
-  - [Multidimensional Arrays](#multidimensional-arrays)
-  - [Array Methods](#array-methods)
-    - [Concatenation - concat](#concatenation---concat)
-    - [Iteration](#iteration)
+  - [Introdução](#introdução)
+  - [Por que devemos usar Arrays ?](#por-que-devemos-usar-arrays-)
+  - [Criando e Inicializando Arrays](#criando-e-inicializando-arrays)
+  - [Acrescentando Elementos](#acrescentando-elementos)
+    - [Inserindo ao final - push](#inserindo-ao-final---push)
+  - [Inserindo na primeira posição - unshift](#inserindo-na-primeira-posição---unshift)
+  - [Removendo Elementos](#removendo-elementos)
+    - [Removendo um elemento final - pop](#removendo-um-elemento-final---pop)
+    - [Removendo um elemento da primeira posição - shift](#removendo-um-elemento-da-primeira-posição---shift)
+  - [Adicionando e Removendo de uma Posição Específica - splice](#adicionando-e-removendo-de-uma-posição-específica---splice)
+  - [Iterando Arrays Bidimensionais](#iterando-arrays-bidimensionais)
+  - [Arrays Multidimensionais](#arrays-multidimensionais)
+  - [Métodos de Arrays](#métodos-de-arrays)
+    - [Junção - concat](#junção---concat)
+    - [Iteração](#iteração)
       - [Every](#every)
       - [Some](#some)
       - [ForEach](#foreach)
       - [Map](#map)
       - [Filter](#filter)
       - [Reduce](#reduce)
-    - [Sorting Elements](#sorting-elements)
+    - [Ordenando Elementos](#ordenando-elementos)
       - [Reverse](#reverse)
       - [Sort](#sort)
-      - [Custom](#custom)
-    - [Search - index, indexOf](#search---index-indexof)
-    - [Converting an Array to a String - toString, join](#converting-an-array-to-a-string---tostring-join)
-  - [TypedArray Class](#typedarray-class)
+      - [Personalizada](#personalizada)
+    - [Pesquisa - index, indexOf](#pesquisa---index-indexof)
+    - [Convertendo Array em uma String - toString, join](#convertendo-array-em-uma-string---tostring-join)
+  - [Classe TypedArray](#classe-typedarray)
 
-## Introduction
+## Introdução
 
-An Array is the simplest possible data structure in memory. This array stores values that are all of the same type sequentially. Although JavaScript allows us to create arrays with values of distinct types, we should not do so.
+Um Array é uma estrutura de dados mais simples possível em memória. Esse array armazena valores que são todos do mesmo tipo, sequencialmente.Embora o JavaScript nos permita criar arrays com valores de tipos distintos, não podemos fazer isso.
 
-## Why Should We Use Arrays?
+## Por que devemos usar Arrays ?
 
-Arrays are useful for several reasons:
+Os arrays são úteis por diversos motivos:
 
-- Storing multiple values
-- Accessing elements
-- Simplified iteration
-- Flexibility
-- Data manipulation
-- Memory efficiency
-
-## Creating and Initializing Arrays
+- Armazenamento de múltiplos valores
+- Acesso a elementos
+- Iteração simplificada
+- Flexibilidade
+- Manipulação de dados
+- Eficiência de memória
+  
+## Criando e Inicializando Arrays
 
 ```
 let daysOfWeek = new Array();
@@ -57,190 +59,200 @@ let daysOfWeek = [];
 daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 ```
 
-## Adding Elements
+## Acrescentando Elementos
 
-Adding elements to an array is not difficult; however, these operations can have their subtleties.
+Acrescentar elementos de um array não é tão difícil; contudo, essas operações podem ter suas sutilezas.
 
-### Appending at the End - push
+### Inserindo ao final - push
 
-If we want to add a new element to this array, all we need to do is reference the last free position in the array and assign a value to it.
+Se quisermos acrescentar um novo elemento nesse array tudo que precisamos fazer é referenciar a última posição livre
+do array e atribuir-lhe um valor.
 
-> In JavaScript, an array is a mutable object. We can easily add new elements to it. The object will dynamically grow as new elements are added.
+> Em JavaScript, um array é um objeto mutável. Podemos facilmente lhe acrescentar novos elementos. O objeto crescerá dinamicamente à medida que novos elementos forem adicionados.
 
-JavaScript's API also has a method called **push**, which allows us to append new elements to the end of an array.
+A API de JavaScript também tem um método chamado **push**, que nos permite acrescentar novos elementos no final de um array
 
  ```
   numbers.push(11);
   numbers.push(12, 13);
  ```
 
-## Adding at the First Position - unshift
+## Inserindo na primeira posição - unshift
 
-For this, we initially need to make the first position free by shifting all elements to the right.
+Para isso, inicialmente devemos deixar a primeira posição livre, deslocando todos os elementos para a direita.
 
-JavaScript's class also has a method called **unshift** which inserts the values passed as arguments to the method at the beginning of the array.
+A classe de JavaScript também tem um método chamado **unshift**,
+array que insere no início do array os valores passados como argumentos para o método.
 
 ```
   numbers.unshift(-2);
   numbers.unshift(-4, -3);
 ```
 
-## Removing Elements
+## Removendo Elementos
 
-Removing elements from an array is not difficult; however, these operations can have their subtleties.
+Remover elementos de um array não é tão difícil; contudo, essas operações podem ter suas sutilezas.
 
-### Removing an Element from the End - pop
+### Removendo um elemento final - pop
 
-The **pop** method removes the last element from an array and returns that element.
+O método **pop** remove o último elemento de um array e retorna aquele elemento.
 
 ```
   numbers.pop();
 ```
 
-> The **push** and **pop** methods allow an array to emulate a basic stack.
+>Os métodos **push** e **pop** permitem que um array emule uma pilha básica.
 
-### Removing an Element from the First Position - shift
+### Removendo um elemento da primeira posição - shift
 
-The **shift** method removes the first element from an array and returns that element.
+O método **shift** remove o primeiro elemento de um array e retorna esse elemento.
 
 ```
   numbers.shift();
 ```
 
-> The methods **shift** and **unshift** allow an array to emulate a basic queue data structure.
+> Os métodos e permitem que um array emule uma estrutura **shift** e **unshift** de dados básica de fila.
 
-## Adding and Removing from a Specific Position - splice
+## Adicionando e Removendo de uma Posição Específica - splice
 
-The **splice** method can be used to remove an element from an array by simply specifying the position/index from which we want to make the removal and the number of elements we would like to remove.
+O método **splice** pode ser usado para remover um elemento de um array, simplesmente especificando a posição/índice a partir do qual queremos fazer a remoção e a quantidade de elementos que gostaríamos de remover
 
 ```
   numbers.splice(5,3);
 ```
 
-This code will remove three elements starting from index 5 in our array. This means that numbers[5], numbers[6], and numbers[7] will be removed from the numbers array.
+Esse código removerá três elementos a partir do índice 5 de nosso array. Isso significa que numbers[5], numbers[6] e numbers[7] serão removidos do array numbers.
 
-> The **delete** operator can also be used to remove an element from an array. However, the array position will have the value undefined, similar to executing numbers[0] = undefined, and we would need to re-index the array. For this reason, we should always use the **splice**, **pop**, or **shift** methods to remove elements.
+> O operador **delete** também pode ser usado para remover um elemento de um array. No entanto, a posição do array terá o valor undefined, ou seja, será o mesmo que executar numbers[0] = undefined, e teríamos  de reindexar o array. Por esse motivo, devemos sempre usar os métodos **splice**, **pop** ou **shift** para remover elementos.
  ---
 
-We can also use the **splice** method to insert elements into the array:
+ Também podemos usar o método **splice** para inserir elementos no array:
 
-```
+ ```
  numbers.splice(5, 0, 2, 3, 4);
-```
+ ```
 
-The first argument of the method is the index from which we want to insert elements. The second argument is the number of elements we want to remove (in this case, we don't want to remove any, so we pass the value 0). From the third argument onward, we have the values we want to insert into the array (the elements 2, 3, and 4).
+ O primeiro argumento do método é o índice a partir do qual queremos inserir elementos. O segundo argumento é a quantidade de elementos que queremos remover (nesse caso, não queremos remover nenhum, portanto passamos o valor 0 (zero)). Do terceiro argumento em diante, temos os valores que gostaríamos de inserir no array (os elementos
+2, 3 e 4).
 
-## Iterating through two-dimensional Arrays
+## Iterando Arrays Bidimensionais
 
-It is necessary to iterate through all rows and columns using a nested **for** loop. For this, we use an outer loop for rows represented by variable **i** and an inner loop for columns represented by variable **j**.
+É necessário percorrer todas as linhas e colunas com um laço. Para isso, devemos usar um laço **for** aninhado, em que a variável  **i** representa as linhas e **j** representa as colunas.
 
-> To display a two-dimensional array in the browser console, we can use the statement **console.table(bidiArray)**. This provides a more user-friendly output.
+> Para exibir um array bidimensional no console do navegador, podemos usar  a instrução **console.table(bidiArray)**. Com ela, teremos  uma saída mais elegante para o usuário.
 
-> Two-dimensional arrays are the most common.
+> Os arrays bidimensionais são os mais comuns.
 
-## Multidimensional Arrays
+## Arrays Multidimensionais
 
-We use the same logic for two-dimensional arrays. We just need to add an additional **for** loop for variable **z**, representing the depth of the matrix.
+Utilizamos a mesma lógica para array bidimensional. Só vamos precisar acrescentar um laço **for** para a variável **z**, que representa a profundidade da matriz.
 
-## Array Methods
+## Métodos de Arrays
 
-Arrays in JavaScript are quite interesting because they are highly effective and have more features available than primitive arrays in other languages.
+Os arrays em JavaScript são bem interessantes, pois são muito eficazes e têm mais recursos disponíveis que os arrays primitivos em outras linguagens.
 
-|  Method  |                             Description                             |
+|  Método  |                             Descrição                             |
 |:--------:|-------------------------------------------------------------------|
-|concat    |Concatenates multiple arrays and returns a copy of the concatenated arrays.   |
-|every     |Iterates over all elements of the array, checking for a desired condition (function) until false is returned. |
-|filter    |Creates an array with all elements that evaluate to true by the specified function. |
-|forEach   |Executes a specific function on each element of the array.           |
-|join      |Joins all elements of the array into a string.                  |
-|indexOf   |Searches the array for specific elements and returns their position. |
-|lastIndexOf|Returns the position of the last item in the array that matches the search criterion.|
-|map  |Creates another array from a function containing the criterion/condition and returns the array elements that match the criterion. |
-|reverse   |Reverses the array, making the last item the first and vice versa. |
-|slice     |Returns a new array from the specified index.            |
-|some      |Iterates over all elements of the array, checking for the desired condition (function) until true is returned.|
-|sort      |Sorts the array in alphabetical order or according to the specified function. |
-|toString  |Returns the array as a string.                           |
-|valueOf   |Similar to the toString method, returns the array as a string. |
+|concat    |Junta vários arrays e devolve uma cópia dos arrays concatenados.   |
+|every     |Itera por todos os elementos do array, verificando uma condição desejada (função) até que false seja devolvido. |
+|filter    |Cria um array com todos os elementos avaliados com true pela função especificada. |
+|forEach   |Executa uma função específica em cada elemento do array.           |
+|join      | Reúne todos os elementos do array em uma string.                  |
+|indexOf   | Pesquisa o array em busca de elementos específicos e devolve a sua posição. |
+|lastIndexOf| Devolve a posição do último item do array que corresponda ao  critério de pesquisa.|
+|map       | Cria outro array a partir de uma função que contém o critério/condição e devolve os elementos do array que correspondam ao critério. |
+|reverse   | Inverte o array, de modo que o último item se torne o primeiro, e vice-versa. |
+|slice     | Devolve um novo array a partir do índice especificado.            |
+|some      |Itera por todos os elementos do array, verificando a condição desejada (função) até que true seja devolvido.|
+|sort      | Organiza o array em ordem alfabética ou de acordo com a função especificada. |
+|toString  | Devolve o array na forma de uma string.                           |
+|valueOf   | É semelhante ao método toString e devolve o array na forma de uma string. |
 
-### Concatenation - concat
+### Junção - concat
 
-Consider a scenario where you have different arrays and need to join them all into a single array. Fortunately, JavaScript already has a method called **concat** that can do this for us.
+Considere um cenário em que você tenha arrays diferentes e precise juntar
+todos eles em um único array. Felizmente, a linguagem JavaScript já tem um método chamado **concat** capaz de fazer isso para nós.
 
-We can pass as many arrays and objects/elements as we want to this method. The arrays will be concatenated into the specified array in the order the arguments are passed to the method.
+Podemos passar quantos arrays e objetos/elementos quisermos para esse
+array. Os arrays serão concatenados no array especificado na ordem em
+que os argumentos forem passados para o método
 
-### Iteration
+### Iteração
 
-JavaScript has some built-in iteration methods that can be used with arrays.
+A linguagem JavaScript tem alguns métodos de iteração embutidos, que
+podem ser usados com arrays
 
 #### Every
 
-The **every** method iterates through the array elements until the function returns false.
+o método every, itera os elementos do array até que a função devolva false.
 
 #### Some
 
-The **some** method iterates through the array elements until the function returns true.
+o método some itera os elementos do array até que a função devolva true.
 
 #### ForEach
 
-If we need to iterate through the entire array, regardless of anything else, we can use the forEach function. The result will be the same as using a **for** loop.
+Se precisarmos fazer a iteração em todo o array, independentemente de tudo mais, podemos usar a função forEach. O resultado será o mesmo que usar um laço **for**.
 
 #### Map
 
-The **map** method creates a new array based on elements of the original array by applying a function to each of them. It does not alter the original array but creates and returns a new array with the results of the function applied to each element.
+O método map, criar uma nova matriz com base nos elementos da matriz original, aplicando uma função a cada um deles. Ele não altera a matriz original, mas cria e retorna uma nova matriz com os resultados da função aplicada a cada elemento.
 
 #### Filter
 
-The **filter** method returns a new array with elements for which the function returned true.
+O método filter, devolve um novo array com os elementos para os quais a função devolveu true.
 
 #### Reduce
 
-The **reduce** method takes a function with the following parameters: previousValue, currentValue, index, and array. The index and array parameters are optional, so it is not necessary to pass them if they are not used.
+O método reduce, recebe uma função com os seguintes parâmetros: previousValue, currentValue, index e array. Os parâmetros index e array são opcionais, portanto não é necessário passálos caso não sejam usados.
 
-> This can be very useful if we want to sum all values in an array.
+> Pode ser muito útil se quisermos somar todos os valores de um array.
 
-### Sorting Elements
+### Ordenando Elementos
 
 #### Reverse
 
-The **reverse** method reverses the items in an array. The first element becomes the last, and the last becomes the first.
+O método reverse inverte os itens de um array. O primeiro elemento do array se torna o último e o último torna-se o primeiro.
 
 #### Sort
 
-The **sort** method sorts the elements of the array itself and returns the array.
+O método sort ordena os elementos do próprio array e retorna o array.
 
-> This happens because the method arranges elements in lexicographical order and assumes all elements are strings.
+> Isso ocorre porque o método deixa os elementos em ordem sort lexicográfica e pressupõe que todos os elementos são strings.
 
-#### Custom
+#### Personalizada
 
-We can sort an array containing any type of object, and we can create a function to compare elements according to what is needed. For example, suppose there is a Person object with name and age, and we want to sort the array according to the person's age.
+Podemos ordenar um array que contenha qualquer tipo de objeto, e podemos também criar uma função para comparar os elementos de acordo com o que for necessário. Por exemplo, suponha que haja um objeto Person com name e age e queremos ordenar o array de acordo com a idade (age) da pessoa.
 
-### Search - index, indexOf
+### Pesquisa - index, indexOf
 
-We have two options for search: the **indexOf** method, which returns the index of the first element matching the passed argument, and **lastIndexOf**, which returns the index of the last found element.
+Temos duas opções para pesquisa: o método **indexOf**, que devolve o índice do primeiro elemento correspondente ao argumento passado, e **lastIndexOf**, que devolve o índice do último elemento encontrado
 
-### Converting an Array to a String - toString, join
+### Convertendo Array em uma String - toString, join
 
-If we want to display all elements of the array as a single string, we can use the **toString** method.
+Se quisermos exibir todos os elementos do array em uma única string,
+podemos usar o método **toString**.
 
-If we want to separate the elements with a different separator, for example, -, we can use the **join** method.
+Se quisermos separar os elementos com um separador diferente, por exemplo, -, o método poderá ser usado **join**.
 
-> This can be useful if we need to send the array content to a server or if that content needs to be decoded.
+>Isso pode ser útil se precisarmos enviar o conteúdo do array para um servidor ou se esse conteúdo tiver de ser decodificado.
 
-## TypedArray Class
+## Classe TypedArray
 
-We can store any type of data in JavaScript arrays. This is because JavaScript arrays are not strongly typed like in other languages. TypedArray was created so that we could work with arrays containing a single type of data.
+Podemos armazenar qualquer tipo de dado em arrays JavaScript. Isso se
+deve ao fato de os arrays JavaScript não serem fortemente tipados como em
+outras linguagens. TypedArray foi criado para que pudéssemos trabalhar com arrays contendo um único tipo de dado.
 
-| TypedArray       | Description                                                 |
+| TypedArray       | Descrição                                                 |
 |:---------------: | --------------------------------------------------------- |
-|Int8Array         |8-bit signed integer, using two's complement.   |
-|Uint8Array        |8-bit unsigned integer.                               |
-|Uint8ClampedArray |8-bit unsigned integer.                               |
-|Int16Array        |16-bit signed integer, using two's complement.  |
-|Uint16Array       |16-bit unsigned integer.                              |
-|Int32Array        |32-bit signed integer, using two's complement.  |
-|Uint32Array       |32-bit unsigned integer.                              |
-|Float32Array      |IEEE standard 32-bit floating point number.         |
-|Float64Array      |IEEE standard 64-bit floating point number.         |
+|Int8Array         |Inteiro de 8 bits com sinal, usando complemento de dois.   |
+|Uint8Array        |Inteiro de 8 bits sem sinal.                               |
+|Uint8ClampedArray |Inteiro de 8 bits sem sinal.                               |
+|Int16Array        |Inteiro de 16-bits com sinal, usando complemento de dois.  |
+|Uint16Array       |Inteiro de 16 bits sem sinal.                              |
+|Int32Array        |Inteiro de 32-bits com sinal, usando complemento de dois.  |
+|Uint32Array       |Inteiro de 32 bits sem sinal.                              |
+|Float32Array      |Número de ponto flutuante padrão IEEE com 32 bits.         |
+|Float64Array      |Número de ponto flutuante padrão IEEE com 64 bits.         |
 
-> Typed arrays are great for working with WebGL APIs, manipulating bits, and handling files and images. These arrays work exactly like simple arrays.
+> Arrays tipados são ótimos para trabalhar com APIs WebGL, manipular bits e lidar com arquivos e imagens. Esses arrays funcionam exatamente como os arrays simples.

@@ -1,39 +1,39 @@
-[Leia esta página em português](./README-pt.md)
+[Read this page in English](./README-en.md)
 
-# Set
+# Conjunto
 
-**Summary**
+**Sumário**
 
-- [Set](#set)
-  - [Introduction](#introduction)
-  - [Methods](#methods)
-  - [Applications](#applications)
+- [Conjunto](#conjunto)
+  - [Introdução](#introdução)
+  - [Métodos](#métodos)
+  - [Aplicações](#aplicações)
 
-## Introduction
+## Introdução
 
-A set is an unordered collection of items consisting of unique elements. This data structure employs the same mathematical concept as finite sets. In mathematics, a set also features some basic operations such as union, intersection, and difference.
+Um conjunto (set) é uma coleção não ordenada de itens, composta de elementos únicos. Essa estrutura de dados usa o mesmo conceito matemático dos conjuntos finitos. Em matemática, um conjunto também apresenta algumas operações básicas como união, intersecção e diferença.
 
-> You can also think of a set as an array without repeated elements and without the concept of order.
+> Você também pode pensar em um conjunto como um array sem elementos repetidos e sem o conceito de ordem.
 
-The set data structure doesn't allow duplicate elements. However, in mathematics, there's a concept called a multiset, which permits the insertion of the same element into the set even if it has already been inserted before. Multisets (or bags) can be very useful for counting how many times an element is present in a set. They are often applied in database systems.
+A estrutura de dados de conjunto não permite elementos duplicados. Entretanto, em matemática, tem um conceito chamado multiconjunto, que permite que o mesmo elemento seja inserido no conjunto, mesmo que ele já tenha sido inserido antes. Os multiconjuntos (ou bags) podem ser muito úteis para contar quantos vezes o elemento está presente em um conjunto. Eles são frequentemente aplicados em sistemas de banco de dados.
 
-## Methods
+## Métodos
 
-- add: Adds an element to the set.
-- delete: Removes an element from the set.
-- has: Returns true if the element is in the set, and false otherwise.
-- clear: Removes all elements from the set.
-- size: Returns the size of the set.
-- values: Returns an array with all the values that are in the set.
-- insert: Given two sets, returns a new set with elements present in both sets.
-- union: Given two sets, returns a new set with elements from both specified sets.
-- difference: Given two sets, returns a new set with all elements present in the first set but not in the second.
-- isSubsetOf: Confirms whether a given set is a subset of another.
+- add: Adiciona um elemento ao conjunto.
+- delete: remove um elemento do conjunto.
+- has: devolve um true se o elemento estiver no conjunto, e false case contrário.
+- clear: remove todos os elementos do conjunto.
+- size: devolve o tamanho do conjunto.
+- values: devolve um array com todos os valores que estão no conjunto.
+- insert: dados dois conjuntos, devolve um novo conjunto com os elementos presentes em ambos os conjuntos.
+- union: dados dois conjuntos, devolve um novo conjunto com elementos dos dois conjuntos especificados.
+- difference: dados dois conjuntos, devolve um novo conjunto com todos os elementos presentes no primeiro conjunto, mas não no segundo.
+- isSubsetOf: confirma se um dado conjunto é um subconjunto de outro.
 
-> We'll use an object to represent our set instead of using an array. However, we could also have used an array in this implementation.
+> Vamos usar um objeto para representar o nosso conjunto, em vez de utilizar um array. No entanto, poderíamos também ter usado um array nessa implementação.
 
-## Applications
+## Aplicações
 
-One of the main applications in computer science occurs in databases, which form the foundation of most applications. Sets are used in query design and processing. When creating a query to retrieve a set of data in a relational database (such as Oracle, Microsoft SQL Server, MySQL, and so on), we design the query using set notation, and the database will also return a dataset.
+Uma das principais aplicações em ciência da computação se dá em bancos de dados, que estão na base da maioria das aplicações. Os conjuntos são usados no design e no processamento de consultas (queries). Ao criar uma consulta para obter um conjunto de dados em um banco de dados relacional (Oracle, Microsoft SQL Server, MySQL e assim por diante), fazemos o design da consulta usando a notação de conjunto, e o banco de dados também devolverá um conjunto de dados.
 
-When creating an SQL query, we can specify whether we want to read all the data from a table or only a subset of it. We can also obtain data that is common to two tables, which is present only in one table (and not in the other) or in both. These operations are known in the SQL world as joins, and the basis of SQL joins are set operations.
+Quando criamos uma consulta SQL, podemos especificar se queremos ler todos os dados de uma tabela ou apenas um subconjunto deles. Também podemos obter dados que são comuns a duas tabelas, os quais estão  presentes apenas em uma tabela (e não na outra) ou nas duas. Essas operações são conhecidas no mundo SQL como junções (joins), e a base das junções SQL são as operações em conjuntos.

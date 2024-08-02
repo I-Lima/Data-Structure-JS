@@ -1,85 +1,85 @@
-[Leia esta página em português](./README-pt.md)
+[Read this page in English](./README-en.md)
 
-**Summary**
+**Sumário**
 
-- [Queue](#queue)
-  - [Introduction](#introduction)
-  - [Methods](#methods)
-  - [Applications](#applications)
-  - [Complexity Analysis](#complexity-analysis)
-- [Double-Ended Queue (Deque)](#double-ended-queue-deque)
-  - [Introduction](#introduction-1)
-  - [Methods](#methods-1)
-  - [Applications](#applications-1)
-  - [Complexity Analysis](#complexity-analysis-1)
+- [Fila](#fila)
+  - [Introdução](#introdução)
+  - [Métodos](#métodos)
+  - [Aplicações](#aplicações)
+  - [Análise de Complexidade](#análise-de-complexidade)
+- [Fila Dupla (Deque)](#fila-dupla-deque)
+  - [Introdução](#introdução-1)
+  - [Métodos](#métodos-1)
+  - [Aplicações](#aplicações-1)
+  - [Análise de Complexidade](#análise-de-complexidade-1)
 
 <img src="./Assets/GraphicsQueues-V2_3_051122.webp" width="100%" />
 
-# Queue
+# Fila
 
-## Introduction
+## Introdução
 
-What sets it apart from the stack is the order in which elements are removed: while in the stack "last in, first out" applies, in the queue "first in, first out" (FIFO) is the rule. Its fundamental idea is that we can only insert a new element at the end of the queue and can only take out the element from the front.
+O que diferencia da pilha é a ordem de saída dos elementos: enquanto na pilha "o último é o primeiro que sai", na fila "o primeiro que entra é o primeiro que sai" (FIFO - First In First Out). Sua ideia fundamental é que só podemos inserir um novo elemento no final da fila e só podemos retirar o elemento do início.
 
-The queue structure is a natural analogy to the concept of a line that we use in our daily lives: the first to enter a line is the first to be served.
+A estrutura de fila é uma analogia natural com o conceito de fila que usamos no nosso dia-a-dia: quem primeiro entra numa fila é o primeiro a ser atendido.
 
-A well-known example in computer science is the print queue. Suppose we need to print five documents. We open each of the documents and click the print button. Each one will be sent to the printer queue. The first document for which we requested printing will be printed first, and so on, until all have been printed.
+Um exemplo muito conhecido em ciência da computação é a fila de impressão. Suponha que precisamos imprimir cinco documentos. Abrimos cada um dos documentos e clicamos no botão para imprimir. Cada um será enviado para a fila da impressora. O primeiro documento para o qual solicitamos a  impressão será impresso antes, e assim por diante, até que todos tenham sido impressos.
 
-## Methods
+## Métodos
 
-- Enqueue: Adds an element to the end of the queue.
-- Dequeue: Removes the first element from the queue. Also returns the removed element.
-- Peek: Returns the first element from the queue without removing it.
-- isEmpty: Checks if the queue is empty.
-- Size: Returns the number of elements in the queue.
-- Clear: Removes all elements from the queue, leaving it empty.
+- Enqueue: Adiciona um elemento ao final da fila.
+- Dequeue: Removeo primeiro elemento da fila. Também devolve o elemento removido.
+- Peek: Devolve o primeiro elemento da fila, sem remover o elemento da fila.
+- isEmpty: Verifica se a fila está vazia.
+- Size: Retorna a quantidade de elementos na fila.
+- Clear: Remove todos os elementos da fila, deixando-a vazia.
 
-## Applications
+## Aplicações
 
-- Real-time queuing systems.
-- Computer networks.
-- Printing systems.
-- Server task processing.
-- Order management systems.
+- Sistemas de filas em tempo real.
+- Redes de computadores.
+- Sistemas de impressão.
+- Processamento de tarefas em servidores.
+- Sistemas de gerenciamento de pedidos.
 
-## Complexity Analysis
+## Análise de Complexidade
 
-The enqueue and dequeue operations in the queue always perform basic operations. Thus, they are constant-time operations and take O(1) time.
+A operação de inserção e remoção na fila sempre realiza operações básicas. Logo, são operações de tempo constante e gastam tempo O(1).
 
-However, the operation to traverse the entire queue involves traversing all the elements stored in it. Considering that a queue contains *n* elements, the runtime will be O(n).
+Já a operação de consultar toda a fila percorre todos os elementos armazenados nela. Considerando que uma pilha contém *n* elementos, o tempo de execução será O(n).
 
-The operation to empty the queue involves removing all elements from it. The time spent on this operation depends on the programming language being used.
+A operação de esvaziamento da fila consiste em remover todos os elementos dela. O tempo gasto nessa operação depende da linguagem de programação que está sendo utilizada.
 
-# Double-Ended Queue (Deque)
+# Fila Dupla (Deque)
 
-## Introduction
+## Introdução
 
-The double-ended queue, or deque, is a special queue that allows us to insert and remove elements from both the front and the back of the queue.
+A fila dupla ou deque é uma fila especial que nos permite inserir e remover elementos do final ou da frente da fila.
 
-In computer science, a common application of a deque is in storing a list of operations to undo actions (undo). Whenever a user performs an operation in the software, a push of that operation will be made onto the deque. When the user clicks the Undo button, a pop operation will be performed on the deque, which means that operation will be removed from the end.
+Em ciência da computação, uma aplicação comum de um deque é na armazenagem de uma lista de operações para desfazer ações (undo). Sempre que um usuário executar uma operação no software, um push dessa operação será feito no deque. Quando o usuário clicar no botão Undo (Desfazer), uma operação de pop será efetuada no deque, o que significa que essa operação será removida do final.
 
-## Methods
+## Métodos
 
-- addFront: Adds an element to the end of the deque.
-- addBack: Adds an element to the front of the deque.
-- removeFront: Removes the first element of the deque.
-- removeBack: Removes the last element of the deque.
-- peekFront: Returns the first element of the deque without removing it.
-- peekBack: Returns the last element of the deque without removing it.
-- isEmpty: Checks if the deque is empty.
-- size: Returns the number of elements in the deque.
-- clear: Removes all elements from the deque, leaving it empty.
+- addFront: Adiciona um elemento no fim do deque.
+- AddBack: Adiciona um elemento no início do deque.
+- removeFront: Remove o primeiro elemento do deque.
+- removeBack: Remove o último elemento do deque.
+- peekFront: Devolve o primeiro elemento do deque, sem remover.
+- peekBack: Devolve o último elemento do deque, sem remover.
+- isEmpty: Verifica se a fila está vazia.
+- Size: Retorna a quantidade de elementos na fila.
+- Clear: Remove todos os elementos da fila, deixando-a vazia.
 
-## Applications
+## Aplicações
 
-- Priority queue algorithms.
-- Implementation of caches.
-- Processing buffers in network communication.
+- Algoritmos de fila de prioridade.
+- Implementação de caches.
+- Processamento de buffers em comunicação de rede.
 
-## Complexity Analysis
+## Análise de Complexidade
 
-The insertion and removal operations in the deque always perform basic operations. Thus, they are constant-time operations and take O(1) time.
+A operação de inserção e remoção no deque sempre realiza operações básicas. Logo, são operações de tempo constante e gastam tempo O(1).
 
-However, the operation to traverse the entire deque involves traversing all the elements stored in it. Considering that a deque contains *n* elements, the runtime will be O(n).
+Já a operação de consultar toda o deque percorre todos os elementos armazenados nela. Considerando que uma pilha contém *n* elementos, o tempo de execução será O(n).
 
-The operation to empty the deque involves removing all elements from it. The time spent on this operation depends on the programming language being used.
+A operação de esvaziamento do deque consiste em remover todos os elementos dela. O tempo gasto nessa operação depende da linguagem de programação que está sendo utilizada.

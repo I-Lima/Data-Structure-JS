@@ -1,134 +1,135 @@
-[Leia esta página em português](./README-pt.md)
+[Read this page in English](./README-en.md)
 
-**Summary**
+**Sumário**
 
-- [Linked List](#linked-list)
-  - [Introduction](#introduction)
-  - [Methods](#methods)
-  - [Applications](#applications)
-- [Doubly Linked List](#doubly-linked-list)
-  - [Introduction](#introduction-1)
-  - [Methods](#methods-1)
-  - [Applications](#applications-1)
-- [Circular Linked List](#circular-linked-list)
-  - [Introduction](#introduction-2)
-  - [Methods](#methods-2)
-  - [Applications](#applications-2)
-- [Sorted Linked List](#sorted-linked-list)
-  - [Introduction](#introduction-3)
-  - [Methods](#methods-3)
-  - [Applications](#applications-3)
+- [Lista Encadeada](#lista-encadeada)
+  - [Introdução](#introdução)
+  - [Métodos](#métodos)
+  - [Aplicações](#aplicações)
+- [Lista Duplamente Encadeada](#lista-duplamente-encadeada)
+  - [Introdução](#introdução-1)
+  - [Métodos](#métodos-1)
+  - [Aplicações](#aplicações-1)
+- [Lista Encadeada Circular](#lista-encadeada-circular)
+  - [Introdução](#introdução-2)
+  - [Métodos](#métodos-2)
+  - [Aplicações](#aplicações-2)
+- [Lista Encadeada Ordenada](#lista-encadeada-ordenada)
+  - [Introdução](#introdução-3)
+  - [Métodos](#métodos-3)
+  - [Aplicações](#aplicações-3)
 
-# Linked List
+# Lista Encadeada
 
 ![Alt text](assets/image.png)
 
-## Introduction
+## Introdução
 
-Linked lists store a sequential collection of elements; however, unlike arrays, we cannot guarantee that the elements stored in the list will occupy a continuous memory space; thus, we don't have direct access to the elements of the list. To maintain the linked list, we must store, along with the element's information, a pointer to the next element in the list.
+As listas ligadas armazenam uma coleção sequencial de elementos; no entanto, de modo diferente dos arrays, não podemos garantir que os elementos armazenados na lista ocuparão um espaço de memória contínuo; portanto, não temos acesso direto aos elementos da lista.
+Para manter a lista encadeada devemos armazenar, junto com a informação do elemento, um ponteiro para o próximo elemento da lista.
 
-One advantage of a linked list over a conventional array is that there's no need to shift elements when they are added or removed. However, using pointers is necessary when working with a linked list, requiring special attention in implementing this type of list.
+Uma das vantagens de uma lista encadeada em relação a um array convencional é que não é necessário deslocar os elementos quando eles são adicionados ou removidos. Entretanto, precisamos usar ponteiros quando trabalhamos com uma lista encadeada, e, por esse motivo, é preciso prestar atenção especial na implementação desse tipo de lista.
 
-A real-world example of a linked list, perhaps most commonly used to illustrate linked lists, is a train. A train consists of a series of cars (also known as wagons). Each of these cars or wagons is linked to another. You can easily disconnect a wagon, move it around, or add/remove a wagon.
+Temos um exemplo de lista encadeada no mundo real, que talvez seja o mais popularmente usado para exemplificar as listas ligadas: um trem. Um trem é constituído de uma série de carros (também conhecidos como vagões). Cada um dos carros ou vagões está ligado a outro. Você pode facilmente desconectar um vagão, mudá-lo de lugar, ou ainda adicionar ou remover um vagão
 
-> It's crucial to have variables that reference the nodes to be controlled to avoid losing connections between them. We could work with just one variable (previous), but it would be more challenging to manage the links between the nodes. Therefore, it's better to declare an extra variable to help with these references.
+> É muito importante ter variáveis que referenciem os nós a serem controlados para que a ligação entre eles não seja perdida. Poderíamos trabalhar com apenas uma variável (previous), mas seria mais difícil controlar as ligações entre os nós. Por esse motivo, é melhor declarar uma variável extra para nos ajudar com essas referências.
 
-## Methods
+## Métodos
 
-- push: adds an element to the end of the list
-- insert: Inserts an element at a specific position in the list.
-- getElementAt: Returns the element at a specific position in the list.
-- remove: Removes an element from the list.
-- indexOf: Returns the index of the element in the list.
-- removeAt: Removes an item from a specific position in the list.
-- isEmpty: Checks if the list is empty.
-- size: Returns the number of elements in the list.
-- Clear: Removes all elements from the list, leaving it empty.
+- push: adiciona um elemento ao final da lista
+- insert: Insere um elemento em uma posição específica da lista.
+- getElementAt: Devolve o elemento que está em uma posição específica da lista.
+- remove: Remove um elemento da lista.
+- indexOf: Devolve o índice do elemento na lista.
+- removeAt: Remove um item de uma posição específica da lista.
+- isEmpty: Verifica se a lista está vazia.
+- size: Retorna a quantidade de elementos na fila.
+- Clear: Remove todos os elementos da fila, deixando-a vazia.
 
-## Applications
+## Aplicações
 
-- Algorithm Implementation.
-- Graphic Applications.
-- Recursive Problem Solving.
+- Implementação de Algoritmos.
+- Aplicações Gráficas.
+- Solução de Problemas Recursivos.
 
-# Doubly Linked List
+# Lista Duplamente Encadeada
 
 ![Alt text](assets/image-1.png)
 
-## Introduction
+## Introdução
 
-The structure of a linked list is characterized by forming a simple linkage between elements: each element stores a pointer to the next element in the list. Consequently, efficiently traversing elements in reverse order is not feasible. The single linkage also complicates removing an element from the list, even if we have the pointer of the element, as given the pointer to a particular element, we cannot directly access its previous element.
+A estrutura de lista encadeada caracteriza-se por formar um encadeamento simples entre os elementos: cada elemento armazena um ponteiro para o próximo elemento da lista. Dessa forma, não temos como percorrer eficientemente os elementos em ordem inversa. O encadeamento simples também dificulta a retirada de uma elemento da lista. Mesmo se tivermos o ponteiro do elemento, para encontrar o elemento anterior, pois, dado o ponteiro para um determinado elemento, não temos como acessar diretamente seu elemento anterior.
 
-To address these issues, we can form a doubly linked list. Each element in this list has a pointer to the next element and a pointer to the previous element. If we have a pointer to the last element in the list, we can traverse the list in reverse order by continuously accessing the previous element until reaching the first element of the list.
+Para solucionar esses problemas, podemos formar uma lista duplamente encadeada. Cada elemento dessa lista tem um ponteiro para o próximo elemento e um ponteiro para o elemento anterior. Se tivermos um ponteiro para o último elemento da lista, podemos percorrer a lista em ordem inversa, bastando acessar continuamente o elemento anterior até alcançar o primeiro elemento da lista.
 
-> The difference between a doubly linked list and a common linked list is that in the latter, we establish a linkage only from one node to the next, whereas in a doubly linked list, we have a dual linkage: one for the next element and another for the previous element.
+> A diferença entre uma lista duplamente encadeada e uma lista encadeada comum é que, nessa última, fazemos a ligação somente de um nó para o próximo, enquanto, em uma lista duplamente encadeada, temos uma ligação dupla: uma para o próximo elemento e outra para o elemento anterior.
 
-## Methods
+## Métodos
 
-- push: adds an element to the end of the list
-- insert: Inserts an element at a specific position in the list.
-- getElementAt: Returns the element at a specific position in the list.
-- remove: Removes an element from the list.
-- indexOf: Returns the index of the element in the list.
-- removeAt: Removes an item from a specific position in the list.
-- isEmpty: Checks if the list is empty.
-- size: Returns the number of elements in the list.
-- Clear: Removes all elements from the list, leaving it empty.
+- push: adiciona um elemento ao final da lista
+- insert: Insere um elemento em uma posição específica da lista.
+- getElementAt: Devolve o elemento que está em uma posição específica da lista.
+- remove: Remove um elemento da lista.
+- indexOf: Devolve o índice do elemento na lista.
+- removeAta: Remove um item de uma posição específica da lista.
+- isEmpty: Verifica se a lista está vazia.
+- size: Retorna a quantidade de elementos na fila.
+- Clear: Remove todos os elementos da fila, deixando-a vazia.
 
-## Applications
+## Aplicações
 
-- Playlist in Music/Video Players.
-- Task Management Systems.
-- Undo/Redo Management in Editors.
+- Lista de reprodução em Players de Música/Vídeo.
+- Sistemas de Gerenciamento de Tarefas.
+- Gerenciamento de Undo/Redo em Editores.
 
-# Circular Linked List
+# Lista Encadeada Circular
 
 ![Alt text](assets/image-2.png)
 
-## Introduction
+## Introdução
 
-A circular linked list can have either a single reference direction (as in the linked list) or a double reference (as in the doubly linked list). The only difference between a circular linked list and a linked list is that the pointer to the next item of the last element does not reference undefined but instead points to the first element of the list.
+Uma lista encadeada circular pode ter apenas uma direção de referência (como na lista encadeada) ou uma referência dupla (como na lista duplamente encadeada). A única diferença entre uma lista encadeada circular e uma lista encadeada é que o ponteiro para o próximo item do último elemento não faz uma referência a undefined, mas ao primeiro elemento da lista.
 
-## Methods
+## Métodos
 
-- push: adds an element to the end of the list
-- insert: Inserts an element at a specific position in the list.
-- getElementAt: Returns the element at a specific position in the list.
-- remove: Removes an element from the list.
-- indexOf: Returns the index of the element in the list.
-- removeAt: Removes an item from a specific position in the list.
-- isEmpty: Checks if the list is empty.
-- size: Returns the number of elements in the list.
-- Clear: Removes all elements from the list, leaving it empty.
+- push: adiciona um elemento ao final da lista
+- insert: Insere um elemento em uma posição específica da lista.
+- getElementAt: Devolve o elemento que está em uma posição específica da lista.
+- remove: Remove um elemento da lista.
+- indexOf: Devolve o índice do elemento na lista.
+- removeAta: Remove um item de uma posição específica da lista.
+- isEmpty: Verifica se a lista está vazia.
+- size: Retorna a quantidade de elementos na fila.
+- Clear: Remove todos os elementos da fila, deixando-a vazia.
 
-## Applications
+## Aplicações
 
-- Circular Scheduling Algorithms.
-- Simulations and Games.
-- Circular Playlists.
+- Algoritmos de Escalonamento Circular.
+- Simulações e Jogos.
+- Listas de Reprodução Circular.
 
-# Sorted Linked List
+# Lista Encadeada Ordenada
 
 ![Alt text](assets/image-3.png)
 
-## Introduction
+## Introdução
 
-A sorted linked list is a list that keeps its elements sorted. To maintain all elements sorted, instead of applying a sorting algorithm, we insert the element in its correct position to keep the list always ordered.
+Uma lista encadeada ordenada é uma lista que mantém seus elementos ordenados. Para manter todos os elementos ordenados, em vez de aplicar um algoritmo de ordenação, inseriremos o elemento em sua posição correta a fim de manter a lista sempre ordenada.
 
-## Methods
+## Métodos
 
-- push: adds an element to the end of the list
-- insert: Inserts an element at a specific position in the list.
-- getElementAt: Returns the element at a specific position in the list.
-- remove: Removes an element from the list.
-- indexOf: Returns the index of the element in the list.
-- removeAt: Removes an item from a specific position in the list.
-- isEmpty: Checks if the list is empty.
-- size: Returns the number of elements in the list.
-- Clear: Removes all elements from the list, leaving it empty.
+- push: adiciona um elemento ao final da lista
+- insert: Insere um elemento em uma posição específica da lista.
+- getElementAt: Devolve o elemento que está em uma posição específica da lista.
+- remove: Remove um elemento da lista.
+- indexOf: Devolve o índice do elemento na lista.
+- removeAta: Remove um item de uma posição específica da lista.
+- isEmpty: Verifica se a lista está vazia.
+- size: Retorna a quantidade de elementos na fila.
+- Clear: Remove todos os elementos da fila, deixando-a vazia.
 
-## Applications
+## Aplicações
 
-- Memory Management in Embedded Systems.
-- Event Processing Applications.
-- Implementation of Sorting Algorithms.
+- Gerenciamento de Memória em Sistemas Embarcados.
+- Aplicações de Processamento de Eventos.
+- Implementação de Algoritmos de Ordenação.

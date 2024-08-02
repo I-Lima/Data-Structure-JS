@@ -1,48 +1,48 @@
-[Leia esta página em português](./README-pt.md)
+[Read this page in English](./README-en.md)
 
-# Stacks
+# Pilhas
 
-**Table of Contents**
+**Sumário**
 
-- [Stacks](#stacks)
-  - [Introduction](#introduction)
-  - [Methods](#methods)
-  - [Applications](#applications)
-  - [Complexity Analysis](#complexity-analysis)
+- [Pilhas](#pilhas)
+  - [Introdução](#introdução)
+  - [Métodos](#métodos)
+  - [Aplicações](#aplicações)
+  - [Análise de Complexidade](#análise-de-complexidade)
 
 <img src="assets/is_a_stack_filo_or_lifo.png" width=80% />
 
-## Introduction
+## Introdução
 
-A stack is an ordered collection of items that follows the Last In First Out (LIFO) principle. Its fundamental idea is that all access to its elements is done from the top. Thus, when a new element is introduced into the stack, it becomes the top element. The only element that can be removed from the stack is the one at the top.
+Uma pilha é uma coleção ordenada de itens que obedece ao princípio LIFO (Last In First Out). Sua idéia fundamental é que todo o acesso a seus elementos seja feito a partir do topo. Assim, quando um elemento novo é introduzido na pilha, ele passa a ser o elemento do topo. O único elemento que pode ser removido da pilha é o do topo.
 
-To understand how a stack structure works, we can make an analogy with a stack of plates. To take a plate from the stack, we remove the one from the top. Hence, we must remove the top plate to access the next one. The stack structure works similarly, where adding new items or removing existing items occurs at the same end.
+Para entender o funcionamento de uma estrutura de pilha, podemos fazer uma analogia com uma pilha de prato. Para pegar um prato da pilha, retiramos o do topo. Assim, temos de retirar o prato do topo para ter acesso ao próximo. A estrutura de pilha funciona de maneira análoga, onde a adição de novos itens ou a remoção de itens existentes ocorrem na mesma extremidade.
 
-> A stack is also used by compilers in programming languages, by computer memory to store variables and method calls, and also by the browser's history.
+> Uma pilha também é usada pelos compiladores em linguagens de programação, pela memória do computador para armazenar variáveis e chamadas de métodos, e também pelo histórico do navegador.
 
-## Methods
+## Métodos
 
-It has the following fundamental operations:
+Ela possui as seguintes operações fundamentais:
 
-- Push: Adds an element to the top of the stack.
-- Pop: Removes the element from the top of the stack.
-- Peek (Top): Retrieves the element at the top of the stack without removing it.
-- isEmpty: Checks if the stack is empty.
-- Size: Returns the number of elements in the stack.
-- Clear: Removes all elements from the stack, leaving it empty.
+- Push: Adiciona um elemento ao topo da pilha.
+- Pop: Remove o elemento do topo da pilha.
+- Peek (Top): Obtém o elemento no topo da pilha sem removê-lo.
+- isEmpty: Verifica se a pilha está vazia.
+- Size: Retorna a quantidade de elementos na pilha.
+- Clear: Remove todos os elementos da pilha, deixando-a vazia.
 
-## Applications
+## Aplicações
 
-- Function call management (Call Stack).
-- History navigation.
-- Mathematical expression evaluation.
-- Memory management.
-- Solving recursive problems.
+- Gerenciamento de chamadas de funções (Call Stack).
+- Navegação de histórico.
+- Análise de expressões matemáticas.
+- Gerenciamento de memória.
+- Solução de problemas recursivos.
+  
+## Análise de Complexidade
 
-## Complexity Analysis
+A operação de inserção e remoção na pilha sempre realiza operações básicas. Logo, são operações de tempo constante e gastam tempo O(1).
 
-The operation of inserting and removing in the stack always performs basic operations. Therefore, these are constant-time operations and take O(1) time.
+Já a operação de consultar toda a pilha percorre todos os elementos armazenados nela. Considerando que uma pilha contém *n* elementos, o tempo de execução será O(n).
 
-However,inspecting the entire stack traverses all the elements stored in it. Considering that a stack contains *n* elements, the execution time will be O(n).
-
-The operation of emptying the stack involves removing all its elements. The time spent on this operation depends on the programming language being used.
+A operação de esvaziamento de pilha consiste em remover todos os elementos dela. O tempo gasto nessa operação depende da linguagem de programação que está sendo utilizada.
