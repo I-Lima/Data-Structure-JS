@@ -19,7 +19,7 @@ Estrutura de dados é um conceito fundamental na ciência da computação que se
 - [Pilhas](./2-Stack/)
 - [Fila](./3-Queue/)
 - [Lista Encadeada](./4-Linked_List/)
-- [Set](./5-Set/)
+- [Conjunto](./5-Set/)
 
 ## Livros usados para o desenvolvimento do contéudo
 
